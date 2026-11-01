@@ -1,5 +1,5 @@
 {
-  "$schema": "https://raw.githubusercontent.com/wi-abas/AGENTWARDEN/main/policy.schema.json",
+  "$schema": "https://raw.githubusercontent.com/wi-abas/AGENTWARDEN/main/schemas/policy-v1.json",
   "tools": {
     "send_email": { "arguments": ["to", "subject", "body"], "required": ["to"] },
     "send_invoice": { "arguments": ["to", "amount"], "required": ["to", "amount"] },
