@@ -34,7 +34,7 @@ From this review:
 
 - **No independent audit and no real users yet.** Everything above was found by the
   project's own (AI-assisted) reviews.
-- **PyPI name not claimed.** The trusted publisher isn't set up, so `agent-warden` isn't on
+- **PyPI name not claimed.** The trusted publisher isn't set up, so `agentwarden` isn't on
   PyPI and someone else could register it. Install from the repository until then.
 - **The identity protocol has two clients: Python and a small TypeScript example**
   ([examples/typescript/warden-client.ts](../examples/typescript/warden-client.ts)). Other

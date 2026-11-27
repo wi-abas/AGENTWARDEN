@@ -2,11 +2,6 @@
 
 ## Unreleased
 
-### Changed
-- The project continues as **AGENTWARDEN** (`wi-abas/AGENTWARDEN`), separate from
-  `wi-abas/agent-warden`. The package is now called `agentwarden`; the import name
-  (`warden`) and the `warden` command are unchanged.
-
 ### Security
 - The `action_hash` is keyed (HMAC-SHA256) with a per-install secret in
   `<audit-db>.hash-key` (mode 600, created on first start). Before, a copy of the
@@ -284,8 +279,8 @@
   them with `warden limits set` for high-volume agents.
 - `agent_id` in `/v1/evaluate` is optional when an agent token is sent.
 
-- Package renamed to **agent-warden** (`pip install agent-warden`); import name and the
-  `warden` command are unchanged. Repository renamed to `wi-abas/agent-warden`.
+- Package renamed to **agentwarden** (`pip install agentwarden`); import name and the
+  `warden` command are unchanged. Repository renamed to `wi-abas/AGENTWARDEN`.
 - `warden init` creates a starter policy; `warden schema` prints a JSON Schema so editors
   autocomplete policy files (`"$schema"` key).
 - New default policy showing argument lists, path and email-domain conditions and messages.

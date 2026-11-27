@@ -6,7 +6,7 @@ name: Release
 # - The build job has no publishing rights; only the publish job gets a short-lived
 #   OIDC token, and only inside the protected "pypi" environment.
 # - Provenance: GitHub attests where and how every file was built
-#   (`gh attestation verify <file> --repo wi-abas/agent-warden`).
+#   (`gh attestation verify <file> --repo wi-abas/AGENTWARDEN`).
 # - SBOM: a CycloneDX list of the exact locked dependencies, kept with the run.
 on:
   push:
@@ -52,7 +52,7 @@ jobs:
         run: |
           mkdir -p sbom
           uv export --format cyclonedx1.5 --preview-features sbom-export \
-            --no-dev --locked --output-file sbom/agent-warden.cdx.json
+            --no-dev --locked --output-file sbom/agentwarden.cdx.json
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: release-files
@@ -70,7 +70,7 @@ jobs:
     # reviewer, so a pushed tag alone can't publish.
     environment:
       name: pypi
-      url: https://pypi.org/project/agent-warden/
+      url: https://pypi.org/project/agentwarden/
     permissions:
       id-token: write # PyPI trusted publishing + attestations (OIDC)
       attestations: write

@@ -6,22 +6,22 @@ no PyPI token to leak.
 
 > **Not on PyPI yet.** The publish step failed (`invalid-publisher`: PyPI has no matching
 > trusted publisher, see step 1). Until the first upload succeeds, the name
-> `agent-warden` on PyPI could be claimed by **someone else**: don't `pip install` or
-> `pip download` it, and don't tell users to. Install the git tag instead (needs `git`):
-> `pip install "git+https://github.com/wi-abas/agent-warden@v0.5.0"`
+> `agentwarden` on PyPI could be claimed by **someone else**: don't `pip install` or
+> `pip download` it, and don't tell users to. Install from GitHub instead (needs `git`):
+> `pip install "git+https://github.com/wi-abas/AGENTWARDEN@main"`
 
 ## One-time setup (by hand, by the repository owner)
 
 1. **PyPI trusted publisher** (missing today). The project doesn't exist on PyPI, so on
    pypi.org use *Your account > Publishing > Add a new pending publisher > GitHub* with
    exactly these values (any difference is `invalid-publisher` again):
-   - PyPI project name `agent-warden`
-   - Owner `wi-abas`, repository name `agent-warden`
+   - PyPI project name `agentwarden`
+   - Owner `wi-abas`, repository name `AGENTWARDEN`
    - Workflow name `release.yml` (the file name only)
    - Environment name `pypi`
 
    A pending publisher does **not** reserve the name: only the first upload does, so
-   publish soon after. First check that https://pypi.org/project/agent-warden/ still
+   publish soon after. First check that https://pypi.org/project/agentwarden/ still
    doesn't exist. If someone else has it, stop: the package needs another name.
 2. **GitHub environment.** Repository *Settings > Environments > New environment*
    `pypi`. Add yourself as a **required reviewer**, and under *Deployment branches and
@@ -53,12 +53,12 @@ no PyPI token to leak.
 Only once the release is really on PyPI (not yet, see the top):
 
 ```sh
-pip download agent-warden==0.5.0 --no-deps -d check/
-gh attestation verify check/agent_warden-0.5.0-py3-none-any.whl --repo wi-abas/agent-warden
+pip download agentwarden==0.5.0 --no-deps -d check/
+gh attestation verify check/agentwarden-0.5.0-py3-none-any.whl --repo wi-abas/AGENTWARDEN
 ```
 
 The attestation proves the file was built by this repository's release workflow from
-the tagged commit. The SBOM (`sbom/agent-warden.cdx.json`) is in the workflow run's
+the tagged commit. The SBOM (`sbom/agentwarden.cdx.json`) is in the workflow run's
 `release-files` artifact for 90 days, and attested too.
 
 ## What this doesn't cover
