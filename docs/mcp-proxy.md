@@ -89,8 +89,8 @@ same shape). Use absolute paths: these apps start servers with a minimal `PATH`.
     "filesystem": {
       "command": "/Users/me/.local/bin/uv",
       "args": [
-        "run", "--directory", "/Users/me/agent-warden",
-        "warden", "proxy", "--config", "/Users/me/agent-warden/examples/proxy-config.json"
+        "run", "--directory", "/Users/me/AGENTWARDEN",
+        "warden", "proxy", "--config", "/Users/me/AGENTWARDEN/examples/proxy-config.json"
       ]
     }
   }
@@ -100,8 +100,8 @@ same shape). Use absolute paths: these apps start servers with a minimal `PATH`.
 **Claude Code:**
 
 ```sh
-claude mcp add filesystem -- uv run --directory /Users/me/agent-warden \
-  warden proxy --config /Users/me/agent-warden/examples/proxy-config.json
+claude mcp add filesystem -- uv run --directory /Users/me/AGENTWARDEN \
+  warden proxy --config /Users/me/AGENTWARDEN/examples/proxy-config.json
 ```
 
 Remove the server's direct entry: the proxy only protects calls that go through it.

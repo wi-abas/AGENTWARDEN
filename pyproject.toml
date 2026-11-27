@@ -1,5 +1,5 @@
 [project]
-name = "agent-warden"
+name = "agentwarden"
 version = "0.5.0"
 description = "Deterministic, local-first policy layer for AI agent tool calls"
 readme = "README.md"
@@ -29,11 +29,11 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/wi-abas/agent-warden"
-Documentation = "https://github.com/wi-abas/agent-warden/tree/main/docs"
-Issues = "https://github.com/wi-abas/agent-warden/issues"
-Changelog = "https://github.com/wi-abas/agent-warden/blob/main/CHANGELOG.md"
-Security = "https://github.com/wi-abas/agent-warden/blob/main/SECURITY.md"
+Homepage = "https://github.com/wi-abas/AGENTWARDEN"
+Documentation = "https://github.com/wi-abas/AGENTWARDEN/tree/main/docs"
+Issues = "https://github.com/wi-abas/AGENTWARDEN/issues"
+Changelog = "https://github.com/wi-abas/AGENTWARDEN/blob/main/CHANGELOG.md"
+Security = "https://github.com/wi-abas/AGENTWARDEN/blob/main/SECURITY.md"
 
 [project.scripts]
 warden = "warden.cli:run"
@@ -77,7 +77,7 @@ strict = true
 plugins = ["pydantic.mypy"]
 
 [tool.uv.build-backend]
-# Installed as "agent-warden" (the name "warden" is taken on PyPI), imported as "warden".
+# Installed as "agentwarden" (the name "warden" is taken on PyPI), imported as "warden".
 module-name = "warden"
 source-exclude = ["**/.DS_Store", "**/__pycache__"]
 wheel-exclude = ["**/.DS_Store", "**/__pycache__"]

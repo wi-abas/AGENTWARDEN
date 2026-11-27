@@ -42,7 +42,7 @@ underline mistakes as you type (Warden itself ignores this line):
 
 ```json
 {
-  "$schema": "https://raw.githubusercontent.com/wi-abas/agent-warden/main/schemas/policy-v1.json",
+  "$schema": "https://raw.githubusercontent.com/wi-abas/AGENTWARDEN/main/schemas/policy-v1.json",
   "rules": [ ... ]
 }
 ```

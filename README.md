@@ -1,6 +1,6 @@
 # Warden
 
-[![CI](https://github.com/wi-abas/agent-warden/actions/workflows/ci.yml/badge.svg)](https://github.com/wi-abas/agent-warden/actions/workflows/ci.yml)
+[![CI](https://github.com/wi-abas/AGENTWARDEN/actions/workflows/ci.yml/badge.svg)](https://github.com/wi-abas/AGENTWARDEN/actions/workflows/ci.yml)
 
 A deterministic, local-first policy layer for AI agent tool calls.
 
@@ -22,24 +22,25 @@ uv sync
 uv run python examples/demo.py
 ```
 
-<img src="https://raw.githubusercontent.com/wi-abas/agent-warden/main/docs/demo.svg" alt="Demo output: allow, deny and require_approval decisions, a blocked path trick, a blocked bcc, a human approval, and a rejected modified-after-approval attempt" width="700">
+<img src="https://raw.githubusercontent.com/wi-abas/AGENTWARDEN/main/docs/demo.svg" alt="Demo output: allow, deny and require_approval decisions, a blocked path trick, a blocked bcc, a human approval, and a rejected modified-after-approval attempt" width="700">
 
 A pretend agent reads files, tries a path trick, emails colleagues (and tries a sneaky
 `bcc`), sends invoices, gets one approved by a human, then tries to change the amount after
 approval and to replay it. Warden's answer to each is shown and checked. The policy it uses
-is [`examples/demo-policy.json`](https://github.com/wi-abas/agent-warden/blob/main/examples/demo-policy.json).
+is [`examples/demo-policy.json`](https://github.com/wi-abas/AGENTWARDEN/blob/main/examples/demo-policy.json).
 
 ## Install in your own project
 
-Warden is **not on PyPI yet**, so install a tagged version from GitHub. You need Python
-3.12 or newer and `git` (slim containers often don't have it).
+Warden is **not on PyPI yet**, so install it from GitHub (the `main` branch until the
+first AGENTWARDEN release is tagged). You need Python 3.12 or newer and `git` (slim
+containers often don't have it).
 
 ```sh
-uv add "agent-warden @ git+https://github.com/wi-abas/agent-warden@v0.5.0"   # with uv
-pip install "git+https://github.com/wi-abas/agent-warden@v0.5.0"              # with pip (in a virtualenv)
+uv add "agentwarden @ git+https://github.com/wi-abas/AGENTWARDEN@main"   # with uv
+pip install "git+https://github.com/wi-abas/AGENTWARDEN@main"              # with pip (in a virtualenv)
 ```
 
-> Don't run `pip install agent-warden` or `uv add agent-warden`: until this project has
+> Don't run `pip install agentwarden` or `uv add agentwarden`: until this project has
 > published there, anyone could claim that name on PyPI and you'd get their code.
 
 Then, from your project folder:
@@ -55,7 +56,7 @@ Give the token to your agent as `WARDEN_AGENT_TOKEN`. Agent tokens are required:
 Warden without them, start it with `--no-auth` (and set `WARDEN_NO_AUTH=1` for the SDK and
 the proxy). Then any local program can claim any agent id, and nothing proves who answers.
 
-(With pip, drop the `uv run`.) The package is called `agent-warden`; the import name is
+(With pip, drop the `uv run`.) The package is called `agentwarden`; the import name is
 `warden`.
 
 ## Use it from your agent
@@ -74,7 +75,7 @@ refused unless you allow them in the config.
   "mcpServers": {
     "filesystem": {
       "command": "uv",
-      "args": ["run", "--directory", "/path/to/agent-warden", "warden", "proxy",
+      "args": ["run", "--directory", "/path/to/AGENTWARDEN", "warden", "proxy",
                "--tool-prefix", "fs.", "--",
                "npx", "-y", "@modelcontextprotocol/server-filesystem", "/Users/me/workspace"],
       "env": {"WARDEN_AGENT_TOKEN": "wdn_... (from warden agent add)"}
@@ -83,7 +84,7 @@ refused unless you allow them in the config.
 }
 ```
 
-Setup, config file and approvals: [docs/mcp-proxy.md](https://github.com/wi-abas/agent-warden/blob/main/docs/mcp-proxy.md).
+Setup, config file and approvals: [docs/mcp-proxy.md](https://github.com/wi-abas/AGENTWARDEN/blob/main/docs/mcp-proxy.md).
 
 ### 2. Python tools: `@guard`
 
@@ -198,9 +199,9 @@ else:
 
 This short version doesn't check that it is Warden that answers. Use `WardenClient` with a
 token for that, or implement the two steps in
-[docs/design/server-identity.md](https://github.com/wi-abas/agent-warden/blob/main/docs/design/server-identity.md).
+[docs/design/server-identity.md](https://github.com/wi-abas/AGENTWARDEN/blob/main/docs/design/server-identity.md).
 
-[`examples/agent.py`](https://github.com/wi-abas/agent-warden/blob/main/examples/agent.py) is a complete version: a small agent loop that
+[`examples/agent.py`](https://github.com/wi-abas/AGENTWARDEN/blob/main/examples/agent.py) is a complete version: a small agent loop that
 also waits for human approval (polling with the `approval_id`) and gives up after a timeout.
 
 ## Quick start
@@ -236,12 +237,12 @@ with `--yes` it is refused unless you add `--across-runs`. Over HTTP, `/approve`
 the `action_hash` from the list (see docs/api.md). A rejected action stays refused for
 15 minutes; `warden approvals list --rejected` and `warden approvals lift ID` manage that.
 
-Settings (`--policy`, `--port`, the admin key, ...): see [docs/api.md](https://github.com/wi-abas/agent-warden/blob/main/docs/api.md#settings).
+Settings (`--policy`, `--port`, the admin key, ...): see [docs/api.md](https://github.com/wi-abas/AGENTWARDEN/blob/main/docs/api.md#settings).
 
 **Changed the port?** Clients don't follow `--port`. Tell them the URL:
 `export WARDEN_URL=http://127.0.0.1:8790` for `warden approvals`, `warden proxy` (unless its
 config file sets `warden_url`) and the SDK's default client, `WardenClient(url=...)` in code. Details:
-[how clients find Warden](https://github.com/wi-abas/agent-warden/blob/main/docs/api.md#how-clients-find-warden).
+[how clients find Warden](https://github.com/wi-abas/AGENTWARDEN/blob/main/docs/api.md#how-clients-find-warden).
 
 ## Speed
 
@@ -254,13 +255,13 @@ directly. With an agent token, Warden first proves itself on the same connection
 
 ## Documentation
 
-- [Writing policies](https://github.com/wi-abas/agent-warden/blob/main/docs/policies.md): rules, argument conditions (incl. nested), `otherwise`, per-agent rules, tool argument lists, common patterns, rate limits, `warden check`
-- [API and operations](https://github.com/wi-abas/agent-warden/blob/main/docs/api.md): endpoints, agent tokens, approvals, audit log, settings
-- [MCP proxy](https://github.com/wi-abas/agent-warden/blob/main/docs/mcp-proxy.md): `warden proxy` for Claude Desktop, Cursor, Claude Code
-- [Design notes](https://github.com/wi-abas/agent-warden/tree/main/docs/design): how each feature works and what it doesn't cover
-- [Security](https://github.com/wi-abas/agent-warden/blob/main/SECURITY.md): threat model, what Warden does and doesn't protect against
-- [Threat model](https://github.com/wi-abas/agent-warden/blob/main/docs/threat-model.md): attackers, defences with their tests, remaining risks
-- [Releasing](https://github.com/wi-abas/agent-warden/blob/main/docs/releasing.md): how releases are tagged and built (publishing to PyPI isn't working yet)
+- [Writing policies](https://github.com/wi-abas/AGENTWARDEN/blob/main/docs/policies.md): rules, argument conditions (incl. nested), `otherwise`, per-agent rules, tool argument lists, common patterns, rate limits, `warden check`
+- [API and operations](https://github.com/wi-abas/AGENTWARDEN/blob/main/docs/api.md): endpoints, agent tokens, approvals, audit log, settings
+- [MCP proxy](https://github.com/wi-abas/AGENTWARDEN/blob/main/docs/mcp-proxy.md): `warden proxy` for Claude Desktop, Cursor, Claude Code
+- [Design notes](https://github.com/wi-abas/AGENTWARDEN/tree/main/docs/design): how each feature works and what it doesn't cover
+- [Security](https://github.com/wi-abas/AGENTWARDEN/blob/main/SECURITY.md): threat model, what Warden does and doesn't protect against
+- [Threat model](https://github.com/wi-abas/AGENTWARDEN/blob/main/docs/threat-model.md): attackers, defences with their tests, remaining risks
+- [Releasing](https://github.com/wi-abas/AGENTWARDEN/blob/main/docs/releasing.md): how releases are tagged and built (publishing to PyPI isn't working yet)
 
 ## Rule for clients: fail closed
 
@@ -354,7 +355,7 @@ uv run mypy                    # type check (strict, incl. tests)
 ## Roadmap
 
 Done in v0.2.0: argument rules, tool argument lists, audit log with retention, human
-approvals, `warden check`, settings, demo, CI. See [CHANGELOG.md](https://github.com/wi-abas/agent-warden/blob/main/CHANGELOG.md).
+approvals, `warden check`, settings, demo, CI. See [CHANGELOG.md](https://github.com/wi-abas/AGENTWARDEN/blob/main/CHANGELOG.md).
 
 Done in v0.3.0 (alpha): MCP proxy, Python SDK, agent tokens, rate limits, persistent
 approvals, group approvals (`warden approvals`), tamper-evident audit log with
@@ -383,9 +384,9 @@ Next, shaped by feedback from early users:
 
 ## Security and contributing
 
-See [SECURITY.md](https://github.com/wi-abas/agent-warden/blob/main/SECURITY.md) for the threat model (what Warden does and doesn't protect
-against) and how to report a vulnerability, and [CONTRIBUTING.md](https://github.com/wi-abas/agent-warden/blob/main/CONTRIBUTING.md) to help.
+See [SECURITY.md](https://github.com/wi-abas/AGENTWARDEN/blob/main/SECURITY.md) for the threat model (what Warden does and doesn't protect
+against) and how to report a vulnerability, and [CONTRIBUTING.md](https://github.com/wi-abas/AGENTWARDEN/blob/main/CONTRIBUTING.md) to help.
 
 ## License
 
-[MIT](https://github.com/wi-abas/agent-warden/blob/main/LICENSE)
+[MIT](https://github.com/wi-abas/AGENTWARDEN/blob/main/LICENSE)

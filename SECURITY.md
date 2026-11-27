@@ -156,7 +156,7 @@ Assuming the agent runtime calls Warden and obeys the answer:
 - **More than 64 tool calls at once through one proxy**: the rest are refused ("too many
   calls in progress"), not queued.
 - **The import name `warden`** is also used by an unrelated PyPI package. Don't install
-  both in one environment, and install `agent-warden` from this repository until it is
+  both in one environment, and install `agentwarden` from this repository until it is
   published on PyPI.
 - **A reviewer who doesn't read.** Group approvals make a careful review possible, not
   certain: similar-looking actions in one group must still be compared, and a script
