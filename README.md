@@ -354,22 +354,22 @@ uv run mypy                    # type check (strict, incl. tests)
 
 ## Roadmap
 
-Done in v0.2.0: argument rules, tool argument lists, audit log with retention, human
-approvals, `warden check`, settings, demo, CI. See [CHANGELOG.md](https://github.com/wi-abas/AGENTWARDEN/blob/main/CHANGELOG.md).
+Done in v0.2.0 (2026-10-30): argument rules, tool argument lists, audit log with retention,
+human approvals, `warden check`, settings, demo, CI. See [CHANGELOG.md](https://github.com/wi-abas/AGENTWARDEN/blob/main/CHANGELOG.md).
 
-Done in v0.3.0 (alpha): MCP proxy, Python SDK, agent tokens, rate limits, persistent
+Done in v0.3.0 (2026-11-11, alpha): MCP proxy, Python SDK, agent tokens, rate limits, persistent
 approvals, group approvals (`warden approvals`), tamper-evident audit log with
 checkpoints, policy tests (`warden test`), nested argument conditions.
 
-Done in v0.4.0 (alpha): per-agent rules, sticky rejections, `otherwise` and `contains`
+Done in v0.4.0 (2026-11-17, alpha): per-agent rules, sticky rejections, `otherwise` and `contains`
 in rules, `host_in` limited to http/https with port checks, approvals need the
 `action_hash` you were shown and warn about separate runs.
 
-Done in v0.4.1 and v0.4.2 (alpha): security and bug fixes, many found by an outside field
+Done in v0.4.1 (2026-11-21) and v0.4.2 (2026-11-23), alpha: security and bug fixes, many found by an outside field
 test (rule tricks, body size limit, audit write checks, policy file permissions). See the
 changelog.
 
-Done in v0.5.0 (alpha): Warden proves its identity. With an agent token or the admin key,
+Done in v0.5.0 (2026-11-24, alpha): Warden proves its identity. With an agent token or the admin key,
 nothing secret is sent until Warden has proven itself, and only signed answers count, so a
 program that takes Warden's port gets nothing and can't make a tool run. Re-create agents
 with `warden agent add` when upgrading.
