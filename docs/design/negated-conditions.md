@@ -76,6 +76,6 @@ allow** (load error): `allow when command contains "git status"` also allows
 - `otherwise` can't loosen: there is no "deny X, otherwise allow".
 - `contains` can't understand shell, SQL or URLs. For commands, allow-list exact
   commands (`eq`/`in`) instead.
-- **Open question for Wissam:** `contains` on an allow rule as a load error (this
+- **Open question:** `contains` on an allow rule as a load error (this
   note) or only a `warden check` warning? An error is safer; a warning matches how
   W010 treats `neq` on allow rules.

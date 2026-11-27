@@ -87,4 +87,4 @@ script before fixing, and each fix has a test that fails without it.
 
 ## Final results
 
-See the session's final report (test count, coverage, lint/types) and `WORKLOG.md`.
+See the session's final report (test count, coverage, lint/types).
