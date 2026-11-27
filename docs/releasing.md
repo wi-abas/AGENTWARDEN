@@ -7,8 +7,8 @@ no PyPI token to leak.
 > **Not on PyPI yet.** The publish step failed (`invalid-publisher`: PyPI has no matching
 > trusted publisher, see step 1). Until the first upload succeeds, the name
 > `agentwarden` on PyPI could be claimed by **someone else**: don't `pip install` or
-> `pip download` it, and don't tell users to. Install the git tag instead (needs `git`):
-> `pip install "git+https://github.com/wi-abas/AGENTWARDEN@v0.5.0"`
+> `pip download` it, and don't tell users to. Install from GitHub instead (needs `git`):
+> `pip install "git+https://github.com/wi-abas/AGENTWARDEN@main"`
 
 ## One-time setup (by hand, by the repository owner)
 
@@ -16,7 +16,7 @@ no PyPI token to leak.
    pypi.org use *Your account > Publishing > Add a new pending publisher > GitHub* with
    exactly these values (any difference is `invalid-publisher` again):
    - PyPI project name `agentwarden`
-   - Owner `wi-abas`, repository name `agentwarden`
+   - Owner `wi-abas`, repository name `AGENTWARDEN`
    - Workflow name `release.yml` (the file name only)
    - Environment name `pypi`
 
