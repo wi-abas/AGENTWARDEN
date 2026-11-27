@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Product
 
-Warden (PyPI `agentwarden`, import `warden`, repo `wi-abas/AGENTWARDEN`) is a
+Warden (package `agentwarden`, import `warden`, repo `wi-abas/AGENTWARDEN`) is a
 developer-first, deterministic, local-first policy layer for AI agent tool calls. Before
 a tool runs, Warden answers:
 

@@ -31,12 +31,13 @@ is [`examples/demo-policy.json`](https://github.com/wi-abas/AGENTWARDEN/blob/mai
 
 ## Install in your own project
 
-Warden is **not on PyPI yet**, so install a tagged version from GitHub. You need Python
-3.12 or newer and `git` (slim containers often don't have it).
+Warden is **not on PyPI yet**, so install it from GitHub (the `main` branch until the
+first AGENTWARDEN release is tagged). You need Python 3.12 or newer and `git` (slim
+containers often don't have it).
 
 ```sh
-uv add "agentwarden @ git+https://github.com/wi-abas/AGENTWARDEN@v0.5.0"   # with uv
-pip install "git+https://github.com/wi-abas/AGENTWARDEN@v0.5.0"              # with pip (in a virtualenv)
+uv add "agentwarden @ git+https://github.com/wi-abas/AGENTWARDEN@main"   # with uv
+pip install "git+https://github.com/wi-abas/AGENTWARDEN@main"              # with pip (in a virtualenv)
 ```
 
 > Don't run `pip install agentwarden` or `uv add agentwarden`: until this project has
@@ -74,7 +75,7 @@ refused unless you allow them in the config.
   "mcpServers": {
     "filesystem": {
       "command": "uv",
-      "args": ["run", "--directory", "/path/to/agentwarden", "warden", "proxy",
+      "args": ["run", "--directory", "/path/to/AGENTWARDEN", "warden", "proxy",
                "--tool-prefix", "fs.", "--",
                "npx", "-y", "@modelcontextprotocol/server-filesystem", "/Users/me/workspace"],
       "env": {"WARDEN_AGENT_TOKEN": "wdn_... (from warden agent add)"}

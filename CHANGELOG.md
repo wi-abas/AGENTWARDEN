@@ -2,6 +2,11 @@
 
 ## Unreleased
 
+### Changed
+- The project continues as **AGENTWARDEN** (`wi-abas/AGENTWARDEN`), separate from
+  `wi-abas/AGENTWARDEN`. The package is now called `agentwarden`; the import name
+  (`warden`) and the `warden` command are unchanged.
+
 ### Security
 - The `action_hash` is keyed (HMAC-SHA256) with a per-install secret in
   `<audit-db>.hash-key` (mode 600, created on first start). Before, a copy of the
