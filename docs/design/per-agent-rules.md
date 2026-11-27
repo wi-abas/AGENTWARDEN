@@ -62,6 +62,6 @@ allow (refused without tokens); a misspelt agent name silently disabling a deny 
 - No "every agent except X" (`except_agents`): it would make new agents inherit
   permissions without anyone choosing that. List the agents instead.
 - No groups or roles of agents; long lists repeat. Can be added later as named sets.
-- **Open question for Wissam:** refuse to start (this note) vs a softer engine rule
+- **Open question:** refuse to start (this note) vs a softer engine rule
   "without tokens, per-agent deny rules apply to everyone and per-agent allow rules to
   no one" (fail closed, but surprising). Refusing is simpler to explain.

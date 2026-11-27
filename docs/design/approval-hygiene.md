@@ -70,5 +70,5 @@ chose to show them.
   fetched, not read).
 - The 2-minute gap is a heuristic: one slow run can look like two, two quick runs
   like one.
-- **Decided (Wissam):** "detect separate runs": 2 minutes as the run gap, and
+- **Decided:** "detect separate runs": 2 minutes as the run gap, and
   `--across-runs` as the escape hatch for `--yes`.

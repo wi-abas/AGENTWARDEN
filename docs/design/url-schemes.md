@@ -65,7 +65,7 @@ different libraries read differently.
   names, not where they lead.
 - Text ops (`startswith "https://..."`) already check the scheme as text; they don't get
   `schemes`.
-- **Open question for Wissam:** should a non-http(s) scheme be uncheckable (deny the
+- **Open question:** should a non-http(s) scheme be uncheckable (deny the
   request, this note) for **allow** rules too, or simply not match there (then a
   different allow rule for the same tool could still allow it)? Uncheckable is
   stricter and the same for every effect.
