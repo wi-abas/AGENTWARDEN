@@ -1,4 +1,4 @@
-# Security audit, 2026-11-22 (long build session re-audit)
+# Security audit, 2026-11-06 (long build session re-audit)
 
 Branch: `build/long-session` (pushed, not merged). Base: `main` at `2a01ff1`.
 

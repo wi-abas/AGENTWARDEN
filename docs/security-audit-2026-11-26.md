@@ -1,4 +1,4 @@
-# Security audit, 2026-11-27 (v0.5.0 review and fixes)
+# Security audit, 2026-11-26 (v0.5.0 review and fixes)
 
 Base: `main` after v0.5.0 (`2ea1da4`). Scope: the whole project after the v0.4.2 field-test
 fixes and the v0.5.0 server identity proof. Warden is still an early MVP and **not

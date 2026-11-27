@@ -194,4 +194,4 @@ Assuming the agent runtime calls Warden and obeys the answer:
 | Audit database file | Yes (tamper-evident, not tamper-proof; also holds approval state) |
 | Hash key file (`<audit-db>.hash-key`) | Yes (with the database, it lets someone guess arguments from stored hashes) |
 
-Latest audit: [docs/security-audit-2026-11-27.md](docs/security-audit-2026-11-27.md).
+Latest audit: [docs/security-audit-2026-11-26.md](docs/security-audit-2026-11-26.md).

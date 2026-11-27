@@ -1,4 +1,4 @@
-# Security audit, 2026-11-22 (overnight session)
+# Security audit, 2026-11-05 (overnight session)
 
 Branch: `security/overnight-audit` (local only, not pushed). Base: `main` at `39f79f5`.
 

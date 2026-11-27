@@ -36,7 +36,7 @@
 - `warden check` warns when an `allow` rule caps a number (`lt`/`lte`) with no minimum and
   no stricter rule catches small values (W021): `amount lte 500` also allowed `-1000000000`.
 
-## v0.5.0 (2026-11-26, alpha)
+## v0.5.0 (2026-11-24, alpha)
 
 ### Security
 - Warden proves its identity. With an agent token (SDK, MCP proxy) or the admin key
@@ -44,7 +44,7 @@
   otherwise deny. The agents file now holds a secret `server_key` per agent (add agents
   again) and must not be readable by others. Without `--agents` nothing is proven.
 
-## v0.4.2 (2026-11-26, alpha)
+## v0.4.2 (2026-11-23, alpha)
 
 ### Security
 - Requests with `Transfer-Encoding` are refused (411), also with `Content-Length`, and body
@@ -78,7 +78,7 @@
 - `warden init` makes its folders 755 whatever the umask, so `serve` accepts them.
 - `ignore_case` checks of a long argument against a long list are about ten times faster.
 
-## v0.4.1 (2026-11-25, alpha)
+## v0.4.1 (2026-11-21, alpha)
 
 ### Security
 - `warden proxy` refuses client requests and notifications with any top-level key other
@@ -124,7 +124,7 @@
 - The sample in `docs/policies.md` is corrected and tested. Every test file must be mapped
   in `scripts/mutation.py` or exempted.
 
-## v0.4.0 (2026-11-24, alpha)
+## v0.4.0 (2026-11-17, alpha)
 
 ### Changed
 - **`action_hash` required** to decide what you haven't listed:
@@ -199,7 +199,7 @@
 - With `--agents`, a `limits.agents` entry for an agent that isn't in the agents file
   now stops `warden serve` from starting (it was silently unused).
 
-## v0.3.0 (2026-11-22, alpha)
+## v0.3.0 (2026-11-11, alpha)
 
 ### Security fixes (full code review)
 - **Host-name rules**: `endswith`/`eq` with a value like `evil.com` could be dodged with
@@ -338,7 +338,7 @@
 - Settings accept only plain 0-9 numbers; a symlinked audit database is refused; an
   approval isn't burned when the audit write fails.
 
-## v0.2.0 (2026-11-22)
+## v0.2.0 (2026-10-30)
 
 First release meant for other people to try. Still an early MVP, **not production-secure**:
 read the threat model in [SECURITY.md](SECURITY.md).
@@ -372,7 +372,7 @@ read the threat model in [SECURITY.md](SECURITY.md).
 - 30-second demo: `uv run python examples/demo.py`.
 - CI: lint, format, strict mypy, tests, policy checks and the demo on every push.
 
-## v0.1.0
+## v0.1.0 (2026-10-28)
 
 - Deterministic policy engine (default deny, most restrictive rule wins, fail closed).
 - Strict request validation, body size limits, action fingerprints.
